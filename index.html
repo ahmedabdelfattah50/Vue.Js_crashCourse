@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js Course</title>
+</head>
+<body>
+
+    <!-- ####### 1 ####### -->
+    <!-- <div id="myName">{{ message }}</div> -->
+
+    <!-- ####### 4 , 5 , 6 ####### -->
+    <div id="myApp">
+        <h1>Hello to my vue app Videos 4 , 5, 6, 7</h1>
+        <h2>your name is {{ name.length }} {{ name.toUpperCase() }} {{ name.length > 10 ? "Yes your name is " + name : "No" }}</h2>
+        <h2>your age is {{ age }}</h2>
+        <h2>your first skills is {{ skills[0] }}</h2>
+        <h2>your are {{ isSubscribed ? "Subscribed" : "not Subscribed" }}</h2>
+        <h2>your first test is {{ completedTestObj[0].testName }} and it's result is {{ completedTestObj[0].testResult }}</h2>
+        <h2>{{ sayHello() }}</h2> 
+        <h2>{{ calYourAgeInDays() }}</h2>
+        <h2 v-text="title"></h2>
+        <h2 v-text="adult ? 'your are adult' : 'your are not adult' "></h2>
+        <div v-html="myDepartment"></div>
+    </div>
+ 
+    <script src="js/vue.js"></script>
+
+    <!-- ####### 1 ####### -->
+    <!-- <script>   
+        new Vue({
+            el: "#myName",
+            data: {
+                message: "Ahmed Abdel-Fattah"
+            }
+        })
+    </script> -->
+
+    <!-- ####### 4 , 5 , 6, 7 ####### -->
+    <script>
+        // vm is View Model
+        var vm = new Vue({
+            el: "#myApp",
+            data: {
+                name: "Ahme Abdel-Fattah",
+                age: 22,
+                adult: true,
+                title: "AL AHLY Club of Century",
+                myDepartment: "<h2 style='color: red'>My department is Inforamtion systems</h2>",
+                skills: [
+                    'HTML' , 
+                    'CSS' ,
+                    'JS'
+                ],
+                isSubscribed: false,
+                completedTestObj: [
+                    {
+                        testName: "First Test",
+                        testResult: "80%",
+                    },
+                    {
+                        testName: "Second Test",
+                        testResult: "70%",
+                    },
+                    {
+                        testName: "Third Test",
+                        testResult: "60%",
+                    }
+                ]
+            },
+            methods: {
+                sayHello: function () {  
+                    return "Hello Ya " + this.name;
+                },
+                calYourAgeInDays: function () {
+                    return "Your age in days = " + this.age * 365 + " days";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
