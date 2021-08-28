@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.svg">
     <title>Vue.Js carshCourse</title>
     <!-- ========= css files ========= -->
     <link rel="stylesheet" href="css/all.css">
@@ -14,18 +15,47 @@
     <h2 class="text-center p-3">Vue.Js carshCourse</h2>
     <div class="container">
         <!-- ========= Start myApp_1 ========= -->
-        <div id="myApp_1">
+        <!-- <div id="myApp_1">
             <h2>=====| myApp_1 |=====</h2>
             <h3>My name is: {{ name }}</h3>
             <h3 v-text="name"></h3>
-            <!-- ###### call the function sayHello() -->
+            <-- ###### call the function sayHello() --
             <p>### sayHello() function is in console window</p>
             {{ sayHello() }}
-            <!-- ###### directives -->
+            <-- ###### directives --
             <p>### directives</p>
             <h3 v-html="rawHtml"></h3>
-        </div>
+        </div> -->
         <!-- ========= End myApp_1 ========= -->
+
+        <!-- ========= Start myApp_2 ========= -->
+        <div id="myApp_2">
+            <h2>=====| myApp_2 |=====</h2>
+            <!-- ###### Attributes -->
+            <p>### Attributes ...... bind</p>
+            <h3 v-bind:id="myId">testBinding</h3>
+            <p>### (If) .... (If-else) .... (else)</p>
+            <p v-if="type == 'A'">Type is A</p>
+            <p v-else-if="type == 'B'">Type is B</p>
+            <p v-else-if="type == 'C'">Type is C</p>
+            <p v-else>Type isn't in <<< A | B | C >>></p>
+            <p>### (if) using template</p>
+            <template v-if="type == 'A'">
+                <h3>my type is {{ type }}</h3>
+                <h3>{{ type }} is the type of the app</h3>
+            </template>
+            <template v-else>
+                the type isn't in -->> A <<-- type 
+            </template>
+            <p v-show='type'>This item from v-show</p>
+            <p>### Increase and Decrease buttons</p>
+            <div class="buttonsContainer">
+                <button v-on:click="increaseFun">Increase <i class="fas fa-plus"></i></button>
+                <h3>{{ counter }} <span v-if='counterStop'>{{ counterStop }}</span></h3>
+                <button v-on:click="decreaseFun"><i class="fas fa-window-minimize"></i> Decrease</button>
+            </div>
+        </div>
+        <!-- ========= End myApp_2 ========= -->
     </div>
     <!-- ========= JavaScript files ========= -->
     <script src="js/jquery_3.6.0.min.js"></script>
